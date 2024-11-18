@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <p>Choose your language．</p>
+    <p><%= cpu %></p>
+    <hr>
+    <form action="/language">
+        <input type="radio" name="radio" id="japanese" value="1">
+        <label for="radio">日本語</label><br>
+        <input type="radio" name="radio" id="english" value="2">
+        <label for="radio">English</label><br>
+        <input type="radio" name="radio" id="korean" value="3">
+        <label for="radio">한국어</label><br>
+        <input type="radio" name="radio" id="chinese" value="4">
+        <label for="radio">中文</label><br>
+        <input type="radio" name="radio" id="german" value="5">
+        <label for="radio">Deutsch</label><br>
+        <input type="submit" value="send">
+    </form>   
+</body>
+</html>

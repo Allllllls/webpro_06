@@ -68,4 +68,51 @@ app.get("/janken", (req, res) => {
   res.render( 'janken', display );
 });
 
+app.get("/language", (req, res) => {
+  const radio = req.query.radio;
+
+  console.log({radio});
+  let cpu = '';
+  if( radio==1 ) cpu = 'こんにちは';
+  else if( radio==2 ) cpu = 'Hello';
+  else if( radio==3 ) cpu = '안녕하세요';
+  else if( radio==4 ) cpu = '你好';
+  else if( radio==5 ) cpu = 'Guten Tag';
+
+  console.log( cpu );
+
+  const display = {
+    cpu: cpu,
+    radio: radio,
+  }
+  res.render( 'language', display );
+});
+
+
+app.get("/today", (req, res) => {
+  const range = req.query.range;
+
+  console.log({range});
+  let cpu = '';
+  if( range<=10 ) cpu = '好きなものを食べて頑張ろう！大丈夫！';
+  else if( range<=20 ) cpu = '友達と一種に過ごしてみよう！';
+  else if( range<=30 ) cpu = '普段と違う服装で気分転換してみよう！';
+  else if( range<=40 ) cpu = '今日の自炊はお休みしちゃう？';
+  else if( range<=50 ) cpu = '普段通りで大丈夫！';
+  else if( range<=60 ) cpu = 'ゴンチャへ行こう！';
+  else if( range<=70 ) cpu = '自分にご褒美をあげちゃおう！';
+  else if( range<=80 ) cpu = '課題を終わらせられるかも？';
+  else if( range<=90 ) cpu = 'ハイテンションにいこう！';
+  else if( range<=100 ) cpu = '絶好調！１日ハッピーに過ごそう！';
+
+  console.log( '今日のアドバイス：' + cpu );
+
+  const display = {
+    cpu: cpu,
+    range: range,
+  }
+  res.render( 'today', display );
+});
+
+
 app.listen(8080, () => console.log("Example app listening on port 8080!"));

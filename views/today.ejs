@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>today</title>
+</head>
+<body>
+    <p>今日の気分は？</p>
+    <hr>
+    <form action="/today">
+        <input type="range" name="range" id="range"><br>
+        <input type="submit" value="送信">
+    </form>
+    <p>今日のアドバイス：<%= cpu %></p>
+</body>
+</html>
